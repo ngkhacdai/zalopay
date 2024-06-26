@@ -44,7 +44,7 @@ export class ZalopayService {
     }
     async payment() {
         const embed_data = {
-            redirecturl: 'http://localhost:3001/'
+            redirecturl: 'https://zalopay.onrender.com/'
         };
         const items = [{}];
         const transID = Math.floor(Math.random() * 1000000);
@@ -71,7 +71,7 @@ export class ZalopayService {
             embed_data: JSON.stringify(embed_data),
             amount: 50000,
             description: `Payment for the order #${transID}`,
-            callback_url: "http://192.168.123.104:3001/zalopay/callback"
+            callback_url: "https://zalopay.onrender.com/zalopay/callback"
         };
 
         const data = `${this.config.app_id}|${order.app_trans_id}|${order.app_user}|${order.amount}|${order.app_time}|${order.embed_data}|${order.item}`;
